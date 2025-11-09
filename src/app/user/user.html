@@ -1,6 +1,12 @@
 <div>
 <button>
-<img>
-<span>User</span>
+<div class="user-card">
+  <span>{{ name }}</span>
+
+  <img [src]="'assets/users/' + avatar" alt="{{ name }}">
+</div>
 </button>
 </div>
+
+
+
