@@ -8,16 +8,24 @@ import { USERS } from '../fake_users';
   styleUrl: './user.css'
 })
 
+ type UserObj = {
+  id: string;
+  name: string;
+  avatar: string;
+};
 
 export class User {
 
-@Input() name!: string;
-@Input() avatar!: string;
-@Input() id!: string;
-@Output() userSelected = new EventEmitter<number>();
+// @Input() name!: string;
+// @Input() avatar!: string;
+// @Input() id!: string;
+
+   @Input() user!: UserObj;
+
+@Output() userSelected = new EventEmitter<string>();
 
   onUserClick() {
-this.userSelected.emit(Number(this.selectedUser.id));
+this.userSelected.emit(this.id);
   }
 
 selectedUser = USERS[0];

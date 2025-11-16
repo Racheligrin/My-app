@@ -18,9 +18,12 @@
 [id]="users[1].id"
 (userSelected)="onUserSelected($event)">
 </app-user>
+
+
+<app-tasks [userName]="selectedUser?.name"></app-tasks>
+
 </main>
 
 
-<p *ngIf="selectedUser">נבחר: {{ selectedUser.name }}</p>
 
 
