@@ -1,5 +1,8 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { USERS } from '../fake_users';
+import  { UserObj} from '../usertype';
+
+
 
 @Component({
   selector: 'app-user',
@@ -8,11 +11,7 @@ import { USERS } from '../fake_users';
   styleUrl: './user.css'
 })
 
- type UserObj = {
-  id: string;
-  name: string;
-  avatar: string;
-};
+
 
 export class User {
 

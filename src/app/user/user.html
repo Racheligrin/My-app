@@ -1,7 +1,6 @@
 <button (click)="onUserClick()" class="user-button">
   <div class="user-card">
-    <span>{{ name }}</span>
-    <img [src]="'assets/users/' + avatar" alt="{{ name }}">
+    <span>{{ user.name }}</span>
+    <img [src]="'assets/users/' + user.avatar" alt="{{ user.name }}">
   </div>
 </button>
-

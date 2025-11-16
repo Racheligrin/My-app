@@ -3,21 +3,19 @@
 
 <app-header></app-header>
 
-<app-user
-  [name]="users[0].name"
-  [avatar]="users[0].avatar"
-  [id]="users[0].id"
-  (userSelected)="onUserSelected($event)"
-  >
-</app-user>
+<ul>
+  <li @for="let u of users; trackBy: trackById">
+    <app-user
+      [user]="u"
+      (userSelected)="onUserSelected($event)">
+    </app-user>
+  </li>
+</ul>
 
+<div class="tasks">
+  <app-tasks [user]="selectedUser"></app-tasks>
+</div>
 
-<app-user
-  [name]="users[1].name"
-  [avatar]="users[1].avatar"
-[id]="users[1].id"
-(userSelected)="onUserSelected($event)">
-</app-user>
 
 
 <app-tasks [userName]="selectedUser?.name"></app-tasks>
