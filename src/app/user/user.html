@@ -1,4 +1,4 @@
-<button (click)="onUserClick()" class="user-button">
+<button (click)="onUserClick()" class="user-button" [class.isActive]="isSelected">
   <div class="user-card">
     <span>{{ user.name }}</span>
     <img [src]="'assets/users/' + user.avatar" alt="{{ user.name }}">

@@ -4,10 +4,12 @@ import { Header } from './header/header';
 import { User } from './user/user';
 import { USERS } from './fake_users';
 import { Tasks } from './tasks/tasks';
+import  { UserObj} from './user/usertype';
+import { Task } from './tasks/task/task';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,User,Tasks],
+  imports: [RouterOutlet,Header,User,Tasks,Task],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -15,7 +17,7 @@ import { Tasks } from './tasks/tasks';
 
 export class App {
   users = USERS;
-  selectedUser: any = null; // המשתמש שנבחר
+  selectedUser ? : UserObj; // המשתמש שנבחר
 
  onUserSelected(id: string) {
 

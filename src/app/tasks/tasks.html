@@ -1,2 +1,23 @@
-<h2>משימות עבור {{ userName }}</h2>
-<p>כאן יופיעו המשימות של המשתמש…</p>
+<section id="tasks">
+<header>
+<h2>{{userName}}'s Tasks</h2>
+<menu>
+<button>Add Task</button>
+</menu>
+</header>
+<ul>
+     
+         @for(task of userSelectedTasks; track task.id){
+            <li>
+                <app-task [task]="task"></app-task>
+            </li>
+         }
+</ul>
+<button (click)="showNewTaskForm = !showNewTaskForm">
+  Add Task
+</button>
+
+</section>
+
+
+

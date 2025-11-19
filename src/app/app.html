@@ -1,25 +1,29 @@
-
 <main>
 
+
 <app-header></app-header>
-
 <ul>
-  <li @for="let u of users; trackBy: trackById">
-    <app-user
-      [user]="u"
-      (userSelected)="onUserSelected($event)">
-    </app-user>
-  </li>
-</ul>
+  <ul id="users">
+    @for(user of users; track user){
+        
+    <li>
+        <app-user [user]="user" [isSelected]="user.id===selectedUser?.id" (userClicked)="onUserSelected($event)"></app-user>
 
-<div class="tasks">
-  <app-tasks [user]="selectedUser"></app-tasks>
+    </li>  
+    
+     }
+</ul> 
+
+
+<div class="container">
+
+  @if (selectedUser) {
+      <app-tasks [user]="selectedUser"></app-tasks>
+  } @else {
+      <p>Please select a user to view his tasks</p>
+  }
+
 </div>
-
-
-
-<app-tasks [userName]="selectedUser?.name"></app-tasks>
-
 </main>
 
 
