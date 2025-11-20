@@ -6,10 +6,10 @@ import { USERS } from './fake_users';
 import { Tasks } from './tasks/tasks';
 import  { UserObj} from './user/usertype';
 import { Task } from './tasks/task/task';
-
+import { NewTask } from './tasks/new-task/new-task';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,User,Tasks,Task],
+  imports: [RouterOutlet,Header,User,Tasks,Task,NewTask],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
