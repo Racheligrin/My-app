@@ -2,7 +2,8 @@
 <header>
 <h2>{{userName}}'s Tasks</h2>
 <menu>
-<button>Add Task</button>
+     <button (click)="showNew()">Add Task</button>
+
 </menu>
 </header>
 <ul>
@@ -13,11 +14,11 @@
             </li>
          }
 </ul>
-<button (click)="showNewTaskForm = !showNewTaskForm">
-  Add Task
-</button>
+
 
 </section>
 
-
+ @if(showNewTask){
+        <app-new-task (close)="showNewTask = false"></app-new-task>
+        }
 

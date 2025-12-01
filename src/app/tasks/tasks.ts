@@ -11,8 +11,9 @@ import { Task } from './task/task';
 })
 export class Tasks {
   @Input() userName: string = '';  
-    @Input() userId?: string;
-showNewTaskForm: boolean = false;
+  @Input() userId?: string;
+  showNewTask = false;
+
 
   tasks = fakeTasks;
 
@@ -20,5 +21,8 @@ get userSelectedTasks() {
 return this.tasks.filter((task) => task.userId === this.userId)
 }
 
-
+ showNew(){
+    this.showNewTask=true;
+  
+  }
 }
