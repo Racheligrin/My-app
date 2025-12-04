@@ -1,3 +1,8 @@
+
+<div class="actions">
+<button (click)="openNewUser()">Add User</button>
+</div>
+
 <main>
 <app-header></app-header>
 
@@ -22,7 +27,11 @@
   }
 
 </div>
-</main>
+
+@if (showNewUser) {
+  <app-new-user (close)="showNewUser = false"></app-new-user>
+}
+
 
 
 

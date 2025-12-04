@@ -1,0 +1,44 @@
+<dialog open>
+  <h2>Add New User</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- שדה שם פרטי -->
+    <p>
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" formControlName="firstName"/>
+    </p>
+
+    <!-- שדה שם משפחה -->
+    <p>
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" formControlName="lastName"/>
+    </p>
+
+    <!-- שדה אימייל -->
+    <p>
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email"/>
+    </p>
+
+    <!-- שדה סיסמה -->
+    <p>
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password"/>
+    </p>
+
+    <!-- שדה אימות סיסמה -->
+    <p>
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword"/>
+    </p>
+
+    <!-- כפתורים -->
+    <p class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit">Create User</button>
+    </p>
+
+  </form>
+</dialog>
+

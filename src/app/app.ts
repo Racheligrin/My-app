@@ -7,9 +7,11 @@ import { Tasks } from './tasks/tasks';
 import  { UserObj} from './user/usertype';
 import { Task } from './tasks/task/task';
 import { NewTask } from './tasks/new-task/new-task';
+import{NewUser} from './user/new-user/new-user';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,User,Tasks,Task,NewTask],
+  imports: [RouterOutlet,Header,User,Tasks,Task,NewTask,NewUser],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -17,7 +19,12 @@ import { NewTask } from './tasks/new-task/new-task';
 
 export class App {
   users = USERS;
-  selectedUser ? : UserObj; // המשתמש שנבחר
+  selectedUser ? : UserObj; 
+   showNewUser = false;
+
+   openNewUser() {
+  this.showNewUser = true;
+}
 
  onUserSelected(id: string) {
 
@@ -27,7 +34,5 @@ export class App {
       this.selectedUser = user; 
 
 }
-
-
 
 }
